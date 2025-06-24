@@ -1,0 +1,24 @@
+<svg width="1000" height="1000" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Círculo de fondo -->
+  <circle cx="40" cy="40" r="40" fill="#111827" />
+
+  <!-- Texto centrado perfectamente -->
+  <text
+    x="40"
+    y="40"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    font-family="Arial, sans-serif"
+    font-size="24"
+    font-weight="bold"
+    fill="white"
+  >
+    SX
+  </text>
+
+  <!-- Iconos / detalles -->
+  <path d="M60,20 L65,20 M62.5,17.5 L62.5,22.5" stroke="white" stroke-width="2" />
+  <path d="M15,60 L20,60 M17.5,57.5 L17.5,62.5" stroke="white" stroke-width="2" />
+  <circle cx="65" cy="65" r="3" fill="#4F46E5" />
+  <circle cx="15" cy="15" r="3" fill="#10B981" />
+</svg>
