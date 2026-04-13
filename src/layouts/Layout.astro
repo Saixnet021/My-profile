@@ -3,23 +3,45 @@ import "../styles/global.css";
 
 interface Props {
 	title?: string;
+	description?: string;
+	image?: string;
 }
 
-const { title = "Anderson Fernandez | Portfolio" } = Astro.props;
+// ⚠️ IMPORTANTE: Reemplaza esta URL con el enlace real de tu portafolio una vez lo subas (ej. https://mi-portfolio.vercel.app)
+const siteUrl = "https://tu-dominio.com";
+
+const {
+	title = "Anderson Fernandez | Portfolio",
+	description = "Anderson Fernandez - Full Stack Developer",
+	// Usamos Microlink API para tomar un screenshot en vivo de tu web y generar la preview automáticamente
+	image = `https://api.microlink.io/?url=${siteUrl}&screenshot=true&meta=false&embed=screenshot.url`,
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta
-			name="description"
-			content="Anderson Fernandez - Desarrollador Full Stack"
-		/>
+		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+
+		<!-- Open Graph / Previews (Links en WhatsApp, LinkedIn, Discord, etc.) -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url.href} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={image} />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:domain" content={Astro.url.hostname} />
+		<meta name="twitter:url" content={Astro.url.href} />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={image} />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
 			rel="stylesheet"
@@ -59,7 +81,7 @@ const { title = "Anderson Fernandez | Portfolio" } = Astro.props;
 						class="w-40 h-40 mx-auto mb-4 rounded-full overflow-hidden bg-slate-900 flex items-center justify-center animate-float"
 					>
 						<img
-							src="/img/yo.jpeg"
+							src="/img/yo.png"
 							alt="Anderson Fernandez"
 							class="w-full h-full object-cover"
 						/>
