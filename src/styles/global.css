@@ -138,28 +138,6 @@ input:focus, textarea:focus {
   background: linear-gradient(180deg, rgba(15, 23, 42, 0.35), rgba(15, 23, 42, 0.15));
 }
 
-.section-shell::before {
-  content: '';
-  position: absolute;
-  inset: -30% -10% auto auto;
-  width: 320px;
-  height: 320px;
-  background: radial-gradient(circle, rgba(20, 184, 166, 0.28), transparent 70%);
-  filter: blur(10px);
-  pointer-events: none;
-}
-
-.section-shell::after {
-  content: '';
-  position: absolute;
-  inset: auto auto -40% -10%;
-  width: 360px;
-  height: 360px;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.28), transparent 70%);
-  filter: blur(12px);
-  pointer-events: none;
-}
-
 .section-title {
   background: linear-gradient(90deg, #e2e8f0 0%, hsl(var(--accent-2)) 80%);
   -webkit-background-clip: text;
@@ -243,20 +221,10 @@ input:focus, textarea:focus {
   animation: tilt-pop 0.8s ease-out both;
 }
 
-.section-shell.in-view::before {
-  animation: float-slow 8s ease-in-out infinite;
-}
-
-.section-shell.in-view::after {
-  animation: float-slow 10s ease-in-out infinite;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .animate-fade-up,
   .animate-float,
-  .stagger > *,
-  .section-shell::before,
-  .section-shell::after {
+  .stagger > * {
     animation: none !important;
     transform: none !important;
     opacity: 1 !important;
